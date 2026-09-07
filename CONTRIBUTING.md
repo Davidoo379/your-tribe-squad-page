@@ -8,10 +8,6 @@ Branches should follow this format:
 
 ## Commits
 
-Use:
-
-<type>: <description>
-
 Use: Added:, Changed:, Removed:,
 
 Examples:
