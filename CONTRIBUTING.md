@@ -4,7 +4,7 @@
 
 Branches should follow this format:
 
-<discription-in-three-words-or-less>
+discription-in-three-words-or-less
 
 ## Commits
 
