@@ -38,7 +38,7 @@ Description: I added a menu button inside the nav on the front page that directs
 
 ## JS Naming
 
-- - filenames: kebab-case
+- filenames: kebab-case
 - comments: UPPERCASE WITH SPACES
 - variables: camelCase
 - classes: PascalCase
