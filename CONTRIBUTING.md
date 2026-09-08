@@ -11,8 +11,8 @@ discription-in-three-words-or-less
 Use: Added:, Changed:, Removed:,
 
 Examples:
-Added: A menu button
-I added a menu button inside the nav on the front page that directs you to the bottom of the page.
+Commit Title: Added: A menu button
+Description: I added a menu button inside the nav on the front page that directs you to the bottom of the page.
 
 
 ## Pull Requests
