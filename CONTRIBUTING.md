@@ -12,6 +12,7 @@ Use: Added:, Changed:, Removed:,
 
 Examples:
 Commit Title: Added: A menu button
+
 Description: I added a menu button inside the nav on the front page that directs you to the bottom of the page.
 
 
