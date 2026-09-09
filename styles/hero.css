@@ -1,0 +1,22 @@
+/* A BACKGROUND WITH A SET HEIGHT ON THE HERO CONTAINER */
+.hero{
+    position: relative;
+    width: 100vw;
+    height: 500px;
+    overflow: hidden;
+    background-color: #86868660;
+}
+/* CARD PREVIEWS ARE FREE TO MOVE AND START IN THE MIDDLE */
+.hero li{
+    position: absolute;
+    list-style: none;
+    display: block;
+    left: 50vw;
+    top: 50%;
+}
+/* IMG RESIZED AND MAINTAINS ASPECT RATIO */
+.hero li img {
+    width: 200px;
+    height: auto;
+    aspect-ratio: auto;
+}
