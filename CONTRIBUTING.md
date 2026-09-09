@@ -34,6 +34,7 @@ Description: I added a menu button inside the nav on the front page that directs
 ## CSS Naming
 
 - filenames: kebab-case
+- Variables: --BACKGROUND_COLOR
 - comments: UPPERCASE WITH SPACES
 
 ## JS Naming
