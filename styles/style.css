@@ -1,10 +1,107 @@
-* {
-    display: border-box;
-    padding: 0;
-    margin: 0;
-}
+/* ==================================================
+   CSS VARIABLES
+   Globale waarden die door de hele website
+   gebruikt kunnen worden.
+   ================================================== */
 
 :root {
-    /* VARIABLES */
-    --FT_SIZE: 1rem; 
+    /* TYPOGRAPHY */
+    --FONT_FAMILY: Arial, sans-serif;
+    --FONT_SIZE: 1rem;
+    --LINE_HEIGHT: 1.5;
+
+    /* COLORS */
+    --COLOR_BACKGROUND: #f9f7f6;
+    --COLOR_WHITE: #ffffff;
+    --COLOR_BLACK: #000000;
+    --COLOR_TEXT: #111111;
+
+    /* SPACING */
+    --SPACING_SMALL: 0.5rem;
+    --SPACING_MEDIUM: 1rem;
+    --SPACING_LARGE: 2rem;
+
+    /* BORDERS */
+    --BORDER_WITDH: 1px;
+    --BORDER_COLOR: #000000;
+}
+
+
+/* ==================================================
+   STYLE RESET
+   Standaard browserstijlen worden gereset zodat
+   we vanuit een consistente basis kunnen werken.
+   ================================================== */
+
+/*
+   Box-sizing zorgt ervoor dat padding en border
+   worden meegerekend in de totale breedte en
+   hoogte van een element.
+*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+
+/*
+   Standaard margin en padding worden verwijderd.
+*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+/*
+   De body gebruikt het standaard lettertype,
+   de standaard tekstgrootte en regelafstand
+   van de website.
+*/
+body {
+    background-color: var(--COLOR_BACKGROUND);
+    color: var(--COLOR_TEXT);
+    font-family: var(--FONT_FAMILY);
+    font-size: var(--FONT_SIZE);
+    line-height: var(--LINE_HEIGHT);
+}
+
+
+/*
+   De standaard bolletjes en nummers van lijsten
+   worden verwijderd.
+*/
+ul,
+ol {
+    list-style: none;
+}
+
+
+/*
+   Afbeeldingen worden als block-element weergegeven
+   en kunnen niet groter worden dan hun container.
+*/
+img {
+    display: block;
+    max-width: 100%;
+}
+
+
+/*
+   Links nemen standaard de kleur over van hun
+   omliggende element.
+*/
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/*
+   Buttons gebruiken hetzelfde lettertype als
+   de rest van de website.
+*/
+button {
+    font: inherit;
 }
