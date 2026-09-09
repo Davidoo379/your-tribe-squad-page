@@ -6,24 +6,24 @@
 
 :root {
     /* TYPOGRAPHY */
-    --font-family: Arial, sans-serif;
-    --font-size: 1rem;
-    --line-height: 1.5;
+    --FONT_FAMILY: Arial, sans-serif;
+    --FONT_SIZE: 1rem;
+    --LINE_HEIGHT: 1.5;
 
     /* COLORS */
-    --color-background: #f3efea;
-    --color-white: #ffffff;
-    --color-black: #000000;
-    --color-text: #111111;
+    --COLOR_BACKGROUND: #f9f7f6;
+    --COLOR_WHITE: #ffffff;
+    --COLOR_BLACK: #000000;
+    --COLOR_TEXT: #111111;
 
     /* SPACING */
-    --spacing-small: 0.5rem;
-    --spacing-medium: 1rem;
-    --spacing-large: 2rem;
+    --SPACING_SMALL: 0.5rem;
+    --SPACING_MEDIUM: 1rem;
+    --SPACING_LARGE: 2rem;
 
     /* BORDERS */
-    --border-width: 1px;
-    --border-color: #000000;
+    --BORDER_WITDH: 1px;
+    --BORDER_COLOR: #000000;
 }
 
 
@@ -60,11 +60,11 @@
    van de website.
 */
 body {
-    background-color: var(--color-background);
-    color: var(--color-text);
-    font-family: var(--font-family);
-    font-size: var(--font-size);
-    line-height: var(--line-height);
+    background-color: var(--COLOR_BACKGROUND);
+    color: var(--COLOR_TEXT);
+    font-family: var(--FONT_FAMILY);
+    font-size: var(--FONT_SIZE);
+    line-height: var(--LINE_HEIGHT);
 }
 
 
@@ -94,6 +94,7 @@ img {
 */
 a {
     color: inherit;
+    text-decoration: none;
 }
 
 
