@@ -2,7 +2,7 @@
 .hero{
     position: relative;
     width: 100vw;
-    height: 500px;
+    height: var(--HERO_HEIGHT);
     overflow: hidden;
     background-color: #86868660;
 }
