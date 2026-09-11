@@ -1,0 +1,109 @@
+/* MAKE THE HEADER STICKY EN GRID */
+header {
+    position: sticky;
+    top: 0px;
+    display: grid;
+    background-color: var(--COLOR_BACKGROUND);
+    grid-template-columns: 1fr 80px;
+    height: var(--HEADER_HEIGHT);
+    width: 100%;
+    z-index: 1;
+
+    @media (min-width: 30em) {
+        position: relative;
+    }
+}
+
+/* ALIGN THE TITLE */
+header h1 {
+    align-self: center;
+    padding-left: var(--SPACING_MEDIUM);
+
+
+    /* MOVE TITLE TO CENTER OF HERO */
+    @media (min-width: 30em) {
+        justify-self: center;
+        transform: translate(40px, calc(calc(var(--HERO_HEIGHT) / 2) + calc(var(--HEADER_HEIGHT)) / 2));
+        filter: drop-shadow(0px 0px 20px rgb(0, 0, 0));
+        color: var(--COLOR_WHITE)
+    }
+}
+
+/* ALIGN THE NAV BUTTON */
+nav {
+    padding: var(--SPACING_MEDIUM);
+    align-self: center;
+    justify-self: center;
+    display: flex;
+}
+
+/* NAV BUTTON STYLING */
+button[popovertarget] {
+    padding: var(--SPACING_SMALL);
+    border-radius: var(--BORDER_RADIUS);
+    background-color: var(--COLOR_BACKGROUND);
+    border: 0;
+    justify-self: center;
+}
+
+button[popovertarget]:hover,
+button[popovertarget]:focus {
+    background-color: var(--COLOR_BACKGROUND_HIGHLIGHT);
+}
+
+button[popovertarget]:active {
+    background-color: var(--COLOR_BACKGROUND_ACTIVE);
+}
+
+/* POPOVER STYLING AND TRANSITION */
+[popover] {
+    z-index: -1;
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease,
+        display 0s allow-discrete,
+        overlay 0.2s allow-discrete;
+
+}
+
+/* POPOVER OPEN STATE */
+[popover]:popover-open {
+    border: 0;
+    background-color: var(--COLOR_BACKGROUND);
+    border-radius: 0px 0px var(--BORDER_RADIUS) var(--BORDER_RADIUS);
+    inset: var(--HEADER_HEIGHT) var(--SPACING_MEDIUM) auto auto;
+
+    transform: translateX(0);
+}
+
+/* POPOVER CLOSE STATE */
+@starting-style {
+    [popover]:popover-open {
+        transform: translateX(200px);
+    }
+}
+
+/* LIST AND ANCHORS STYLING */
+nav ul {
+    padding: var(--SPACING_MEDIUM);
+    padding-top: 0;
+
+
+    a {
+        display: inline-block;
+        width: 120px;
+        margin: var(--SPACING_SMALL);
+        padding: var(--SPACING_SMALL);
+        border-radius: var(--BORDER_RADIUS);
+        background-color: var(--COLOR_BACKGROUND_BUTTON);
+    }
+
+    a:hover,
+    a:focus {
+        background-color: var(--COLOR_BACKGROUND_HIGHLIGHT);
+    }
+
+    a:active {
+        background-color: var(--COLOR_BACKGROUND_ACTIVE);
+    }
+}
