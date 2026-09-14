@@ -3,13 +3,31 @@
 footer {
     display: flex;
     justify-content: flex-end;
-    padding: 2rem;
+    padding: var(--SPACING_LARGE);
+    background-color: var(--COLOR_BACKGROUND_HIGHLIGHT);
 }
 
+/* Link als knop */
+
 footer a {
-    padding: 0.75rem 1.25rem;
-    border-radius: 0.75rem;
-    background-color: black;
-    color: white;
+    padding: var(--SPACING_SMALL) var(--SPACING_MEDIUM);
+    border: 1px solid var(--BORDER_COLOR);
+    border-radius: var(--BORDER_RADIUS);
+    background-color: var(--COLOR_BACKGROUND_BUTTON);
+    color: var(--COLOR_TEXT);
     text-decoration: none;
+}
+
+/* Hover-effect */
+
+footer a:hover {
+    background-color: var(--COLOR_BACKGROUND_ACTIVE);
+    color: var(--COLOR_WHITE);
+}
+
+/* Focus-effect */
+
+footer a:focus-visible {
+    outline: 1px solid var(--COLOR_BLACK);
+    outline-offset: var(--SPACING_SMALL);
 }
