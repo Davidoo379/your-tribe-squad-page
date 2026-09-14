@@ -3,19 +3,21 @@
    Globale waarden die door de hele website
    gebruikt kunnen worden.
    ================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
 
 :root {
     /* TYPOGRAPHY */
     --FONT_FAMILY: Arial, sans-serif;
+    --FONT_TITLE: 'Playfair Display', serif;
     --FONT_SIZE: 1rem;
     --LINE_HEIGHT: 1.5;
 
     /* COLORS */
     --COLOR_BACKGROUND: #ffffff;
-    --COLOR_BACKGROUND_HIGHLIGHT: #b3b3b3;
+    --COLOR_BACKGROUND_HIGHLIGHT: #97daef;
     --COLOR_BACKGROUND_BUTTON: #e4e4e4;
     --COLOR_BACKGROUND_ACTIVE: #696969;
-    --COLOR_BACKGROUND_GRADIENT: #b2f5ff;
+    --COLOR_BACKGROUND_GRADIENT: #97daef;
     --COLOR_WHITE: #ffffff;
     --COLOR_BLACK: #000000;
     --COLOR_TEXT: #111111;
@@ -35,6 +37,7 @@
 
     /* HERO */
     --HERO_HEIGHT: 800px;
+
 }
 
 
@@ -115,4 +118,14 @@ a {
 */
 button {
     font: inherit;
+}
+
+/* TITLES */
+
+h1,
+h2,
+h3 {
+    font-family: var(--FONT_TITLE);
+    font-weight: 700;
+    color: var(--COLOR_BLACK);
 }
