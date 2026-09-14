@@ -46,24 +46,46 @@ const carrouselItems = document.querySelectorAll('.profile-cards ul li');
 
 function updateActiveItem() {
   const carrouselRect = carrousel.getBoundingClientRect();
-  const carrouselCenter = carrouselRect.left + carrouselRect.width / 2;
+  if (window.matchMedia('(max-width: 40rem)').matches) {
+    const carrouselCenter = carrouselRect.top + carrouselRect.height / 2;
 
-  let closest = null;
-  let closestDistance = Infinity;
+    let closest = null;
+    let closestDistance = Infinity;
 
-  carrouselItems.forEach((item, i) => {
-    const rect = item.getBoundingClientRect();
-    const itemCenter = rect.left + rect.width / 2;
-    const distance = Math.abs(itemCenter - carrouselCenter);
+    carrouselItems.forEach((item, i) => {
+      const rect = item.getBoundingClientRect();
+      const itemCenter = rect.top + rect.height / 2;
+      const distance = Math.abs(itemCenter - carrouselCenter);
 
 
-    if (distance < closestDistance) {
-      closestDistance = distance;
-      closest = item;
-    }
-  });
-  carrouselItems.forEach((item) => item.classList.remove('active'));
-  if (closest) closest.classList.add('active');
+      if (distance < closestDistance) {
+        closestDistance = distance;
+        closest = item;
+      }
+    });
+    carrouselItems.forEach((item) => item.classList.remove('active'));
+    if (closest) closest.classList.add('active');
+
+  } else {
+    const carrouselCenter = carrouselRect.left + carrouselRect.width / 2;
+
+    let closest = null;
+    let closestDistance = Infinity;
+
+    carrouselItems.forEach((item, i) => {
+      const rect = item.getBoundingClientRect();
+      const itemCenter = rect.left + rect.width / 2;
+      const distance = Math.abs(itemCenter - carrouselCenter);
+
+
+      if (distance < closestDistance) {
+        closestDistance = distance;
+        closest = item;
+      }
+    });
+    carrouselItems.forEach((item) => item.classList.remove('active'));
+    if (closest) closest.classList.add('active');
+  }
 }
 
 carrousel.addEventListener('scroll', () => {

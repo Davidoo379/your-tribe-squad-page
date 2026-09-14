@@ -5,7 +5,7 @@
 }
 
 .profile-cards h2 {
-    grid-column: 1/5;
+    grid-column: 1/8;
     grid-row: 1/2;
     align-self: center;
     font-size: 4rem;
@@ -23,16 +23,65 @@
     grid-column: 2/3;
     grid-row: 3/4;
 }
-.profile-cards ul.profile-cards-grid::scroll-button(right) {
-    display: none;
+
+@media (max-width: 40rem) {
+    .profile-cards ul::scroll-button(up) {
+        content: "\0245";
+        grid-column: 4/5;
+        grid-row: 2/3;
+    }
+
+    .profile-cards ul::scroll-button(down) {
+        content: "v";
+        grid-column: 4/5;
+        grid-row: 4/5;
+    }
+
+    .profile-cards ul::scroll-button(up),
+    .profile-cards ul::scroll-button(down) {
+        z-index: 1;
+        scale: 0.3;
+        background-color: unset;
+        border: unset;
+        outline: unset;
+        font-size: 10rem;
+        color: var(--COLOR_WHITE);
+        font-family: var(--FONT_FAMILY_ARROW_ICONS);
+        text-align: center;
+        text-justify: center;
+        padding-bottom: 1rem;
+        filter: drop-shadow(0px 0px 10px rgb(0, 0, 0));
+
+        transition: all 0.2s ease;
+
+    }
+
+    .profile-cards ul::scroll-button(up):hover,
+    .profile-cards ul::scroll-button(down):hover,
+    .profile-cards ul::scroll-button(up):focus,
+    .profile-cards ul::scroll-button(down):focus {
+        scale: 0.4;
+        filter: drop-shadow(0px 0px 20px rgb(0, 0, 0));
+    }
+
+    .profile-cards ul::scroll-button(right):active,
+    .profile-cards ul::scroll-button(left):active {
+        scale: 0.2;
+    }
 }
 
+
+.profile-cards ul.profile-cards-grid::scroll-button(right),
 .profile-cards ul.profile-cards-grid::scroll-button(left) {
     display: none;
 }
 
 .profile-cards ul::scroll-button(right),
 .profile-cards ul::scroll-button(left) {
+    @media (max-width: 40rem) {
+        display: none;
+    }
+
     background-color: unset;
     border: unset;
     outline: unset;
@@ -45,10 +94,6 @@
     filter: drop-shadow(0px 0px 10px rgb(0, 0, 0));
 
     transition: all 0.2s ease;
-
-    :hover {
-        scale: 2;
-    }
 }
 
 .profile-cards ul::scroll-button(right):hover,
@@ -72,7 +117,19 @@
     display: flex;
     flex-direction: row;
 
-    align-self: flex-start;
+    @media (max-width: 40rem) {
+        flex-direction: column;
+        overflow-y: scroll;
+        overflow-x: unset;
+        scroll-snap-type: y mandatory;
+        scroll-padding: 20 0px;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: calc(50% - (300px / 2));
+        padding-bottom: calc(50% - (300px / 2));
+    }
+
+    align-self: center;
     justify-content: flex-start;
 
     padding-top: 3rem;
@@ -87,6 +144,7 @@
     padding-right: calc(50% - (350px / 2));
 
     li {
+        align-self: center;
         scroll-snap-align: center;
         scroll-snap-stop: always;
         transition: all 0.2s ease;
@@ -94,7 +152,7 @@
         h3 {
             text-align: center;
             font-size: 2rem;
-            width: 700px;
+            width: min(500px, 60vw);
         }
 
         img {
@@ -107,6 +165,9 @@
 
     li.active {
         scale: 1.1;
+        @media (max-width: 40rem) {
+        scale: 1.3;
+        }
     }
 
 }
@@ -122,12 +183,21 @@
     justify-content: space-evenly;
     padding: 1rem;
     gap: var(--SPACING_MEDIUM);
-    
+    mask-image: linear-gradient(180deg, rgb(255, 255, 255) 0%, rgba(0, 0, 0, 1) 85%, rgba(255, 255, 255, 0) 100%);
+
+    @media (max-width: 40rem) {
+        flex-direction: row;
+        flex-wrap: wrap;
+        overflow-y: scroll;
+        overflow-x: unset;
+        scroll-snap-type: y mandatory;
+    }
+
     li {
         background: rgb(207, 220, 246);
         transition: all 0.2s ease;
-        flex: 0 1 auto;
-        width: 300px;
+        flex: 1 1 auto;
+        width: 250px;
         border-radius: var(--BORDER_RADIUS);
         padding: 1rem;
 
@@ -144,11 +214,12 @@
             border-radius: var(--BORDER_RADIUS);
         }
     }
-    li:nth-child(even){
+
+    li:nth-child(even) {
         display: flex;
         flex-direction: column-reverse;
     }
-    
+
 
     li.active {
         scale: 1.0;
@@ -177,6 +248,7 @@
     height: 80px;
     background: unset;
     border: unset;
+    padding: 1rem;
 
     transition: all 0.2s ease;
 }
