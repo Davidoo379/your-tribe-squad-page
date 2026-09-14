@@ -1,9 +1,11 @@
+/* MAKING THE PROFILECARD SECTION A GRID */
 .profile-cards {
     display: grid;
     grid-template-columns: 1fr 80px 1fr 1fr 1fr 80px 1fr;
     grid-template-rows: 5rem 1fr 80px 1fr min-content;
 }
 
+/* PLACING THE H2 INSIDE THE GRID */
 .profile-cards h2 {
     grid-column: 1/8;
     grid-row: 1/2;
@@ -12,72 +14,31 @@
     padding: 1rem;
 }
 
+/* SETTING THE LOCATION OF THE RIGHT ARROW IN THE GRID */
 .profile-cards ul::scroll-button(right) {
     content: ">";
     grid-column: 6/7;
     grid-row: 3/4;
 }
 
+/* SETTING THE LOCATION OF THE RIGHT ARROW IN THE GRID */
 .profile-cards ul::scroll-button(left) {
     content: "<";
     grid-column: 2/3;
     grid-row: 3/4;
 }
 
-@media (max-width: 40rem) {
-    .profile-cards ul::scroll-button(up) {
-        content: "\0245";
-        grid-column: 4/5;
-        grid-row: 2/3;
-    }
-
-    .profile-cards ul::scroll-button(down) {
-        content: "v";
-        grid-column: 4/5;
-        grid-row: 4/5;
-    }
-
-    .profile-cards ul::scroll-button(up),
-    .profile-cards ul::scroll-button(down) {
-        z-index: 1;
-        scale: 0.3;
-        background-color: unset;
-        border: unset;
-        outline: unset;
-        font-size: 10rem;
-        color: var(--COLOR_WHITE);
-        font-family: var(--FONT_FAMILY_ARROW_ICONS);
-        text-align: center;
-        text-justify: center;
-        padding-bottom: 1rem;
-        filter: drop-shadow(0px 0px 10px rgb(0, 0, 0));
-
-        transition: all 0.2s ease;
-
-    }
-
-    .profile-cards ul::scroll-button(up):hover,
-    .profile-cards ul::scroll-button(down):hover,
-    .profile-cards ul::scroll-button(up):focus,
-    .profile-cards ul::scroll-button(down):focus {
-        scale: 0.4;
-        filter: drop-shadow(0px 0px 20px rgb(0, 0, 0));
-    }
-
-    .profile-cards ul::scroll-button(right):active,
-    .profile-cards ul::scroll-button(left):active {
-        scale: 0.2;
-    }
-}
-
-
+/* HIDING THE ARROWS WHEN THE PROFILE CARDS ARE IN GRID MODE */
 .profile-cards ul.profile-cards-grid::scroll-button(right),
 .profile-cards ul.profile-cards-grid::scroll-button(left) {
     display: none;
 }
 
+/* START STYLING THE ARROW BUTTONS */
 .profile-cards ul::scroll-button(right),
 .profile-cards ul::scroll-button(left) {
+
+    /* HIDE WHEN SCREEN GOES TO MOBILE */
     @media (max-width: 40rem) {
         display: none;
     }
@@ -109,6 +70,8 @@
     scale: 0.9;
 }
 
+/* END STYLING THE ARROW BUTTONS */
+/* STYLING FOR THE PROFILE CARDS IN CARRAOUSEL MODE */
 .profile-cards ul {
     grid-column: 1/8;
     grid-row: 2/5;
@@ -117,6 +80,7 @@
     display: flex;
     flex-direction: row;
 
+    /* SWITH TO VERTICAL CARROUSEL */
     @media (max-width: 40rem) {
         flex-direction: column;
         overflow-y: scroll;
@@ -128,6 +92,8 @@
         padding-top: calc(50% - (300px / 2));
         padding-bottom: calc(50% - (300px / 2));
     }
+
+    /* END SWITCH TO CARROUSEL */
 
     align-self: center;
     justify-content: flex-start;
@@ -142,36 +108,77 @@
     scroll-padding: 0 20px;
     padding-left: calc(50% - (350px / 2));
     padding-right: calc(50% - (350px / 2));
+    
+    @media (max-width: 40rem){
+        padding-top: calc(50% - (150px / 2));
+        padding-bottom: calc(50% - (150px / 2));
+    }
+
 
     li {
         align-self: center;
         scroll-snap-align: center;
         scroll-snap-stop: always;
         transition: all 0.2s ease;
+        /* MOVE TEXT ON TOP OF THE IMAGE */
+        @media (max-width: 40rem) {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: min-content 1fr;
+        }
 
         h3 {
             text-align: center;
             font-size: 2rem;
             width: min(500px, 60vw);
+            /* MOVE H3 INTO GRID */
+            @media (max-width: 40rem) {
+                grid-column: 1/2;
+                grid-row: 1/2;
+                color: transparent;
+                text-align: left;
+                padding-left: var(--SPACING_SMALL);
+                filter: drop-shadow(0px 0px 10px rgb(0, 0, 0));
+            }
         }
 
         img {
             width: 100%;
             height: auto;
             border-radius: var(--BORDER_RADIUS);
+
+        }
+        /* MOVE THE A THAT CONTAINS THE IMAGE INTO THE GRID */
+        a {
+            @media (max-width: 40rem) {
+                grid-column: 1/2;
+                grid-row: 1/3;
+            }
         }
 
     }
 
     li.active {
         scale: 1.1;
+
         @media (max-width: 40rem) {
-        scale: 1.3;
+            scale: 1.3;
+        }
+
+        h3 {
+            @media (max-width: 40rem) {
+                z-index: 1;
+                color: var(--COLOR_WHITE);
+            }
         }
     }
 
 }
 
+/* END CARRAOUSEL MODE */
+
+
+/* STYLING FOR THE PROFILE CARDS IN GRID MODE */
 .profile-cards ul.profile-cards-grid {
     background: unset;
     flex-wrap: wrap;
@@ -226,12 +233,9 @@
     }
 }
 
+/* END GRID MODE */
 
-.arrow-left:active,
-.arrow-right:active {
-    scale: 0.9;
-}
-
+/* STYLING THE PROFILE CARD VIEWING MODE BUTTONS */
 .carrousel-grid-toggle {
     grid-column: 4/5;
     grid-row: 5/6;
@@ -264,3 +268,5 @@
 .grid-button:active {
     scale: 0.9;
 }
+
+/* END VIEWING MODE BUTTONS */
