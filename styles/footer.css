@@ -1,0 +1,34 @@
+/* FOOTER */
+
+footer {
+    display: flex;
+    justify-content: flex-end;
+    padding: var(--SPACING_LARGE);
+    background-color: transparent;
+}
+
+/* Link als knop */
+
+footer a {
+    padding: var(--SPACING_SMALL);
+    border: 0;
+    border-radius: var(--BORDER_RADIUS);
+    background-color: var(--COLOR_BACKGROUND);
+    color: var(--COLOR_TEXT);
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+/* Hover-effect */
+
+footer a:hover,
+footer a:focus-visible {
+    background-color: var(--COLOR_BACKGROUND_HIGHLIGHT);
+}
+
+/* Focus-effect */
+
+footer a:focus-visible {
+    outline: 1px solid var(--COLOR_BLACK);
+    outline-offset: var(--SPACING_SMALL);
+}
