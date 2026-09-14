@@ -35,45 +35,36 @@ items.forEach(item => {
 items.forEach(item => {
 
 });
-
-
 // END HERO IMAGES
 
+
+
 // START CARROUSEL SCALING AND SPACING
+// GRABBING CARROUSEL UL AND CARROUSEL LI 
 const carrousel = document.querySelector('.profile-cards ul');
-let carrouselItems = document.querySelectorAll('.profile-cards ul li');
+const carrouselItems = document.querySelectorAll('.profile-cards ul li');
 
-// --- 1. Clone first & last items for seamless looping ---
-const firstClone = carrouselItems[0].cloneNode(true);
-const lastClone = carrouselItems[carrouselItems.length - 1].cloneNode(true);
+console.log('carrousel element:', carrousel);
+console.log('carrouselItems found:', carrouselItems.length);
 
-carrousel.appendChild(firstClone);           // clone of first goes at the end
-carrousel.insertBefore(lastClone, carrouselItems[0]); // clone of last goes at the start
 
-// refresh the list now that clones exist
-carrouselItems = document.querySelectorAll('.profile-cards ul li');
-
-// --- 2. Start scrolled to the first REAL item (skip the prepended clone) ---
-function scrollToItem(item, behavior = 'instant') {
-  const itemLeft = item.offsetLeft - (carrousel.clientWidth - item.clientWidth) / 2;
-  carrousel.scrollTo({ left: itemLeft, behavior });
-}
-
-// wait a tick so layout is calculated
-requestAnimationFrame(() => scrollToItem(carrouselItems[1]));
-
-// --- 3. Center-detection (same as before) ---
 function updateActiveItem() {
   const carrouselRect = carrousel.getBoundingClientRect();
   const carrouselCenter = carrouselRect.left + carrouselRect.width / 2;
 
+  console.log('--- updateActiveItem fired ---');
+  console.log('carrousel rect:', carrouselRect);
+  console.log('carrousel center:', carrouselCenter);
+
   let closest = null;
   let closestDistance = Infinity;
 
-  carrouselItems.forEach((item) => {
+  carrouselItems.forEach((item, i) => {
     const rect = item.getBoundingClientRect();
     const itemCenter = rect.left + rect.width / 2;
     const distance = Math.abs(itemCenter - carrouselCenter);
+
+    console.log(`item ${i}: center=${itemCenter.toFixed(1)}, distance=${distance.toFixed(1)}`);
 
     if (distance < closestDistance) {
       closestDistance = distance;
@@ -81,35 +72,21 @@ function updateActiveItem() {
     }
   });
 
+  console.log('closest item:', closest);
+
   carrouselItems.forEach((item) => item.classList.remove('active'));
   if (closest) closest.classList.add('active');
-
-  return closest;
 }
 
-// --- 4. Detect when we've scrolled onto a CLONE, then silently jump ---
-let isJumping = false;
-
 carrousel.addEventListener('scroll', () => {
-  if (isJumping) return;
-
-  const active = updateActiveItem();
-  if (!active) return;
-
-  const isFirstClone = active === carrouselItems[carrouselItems.length - 1]; // clone of first, appended at end
-  const isLastClone = active === carrouselItems[0]; // clone of last, prepended at start
-
-  if (isFirstClone) {
-    isJumping = true;
-    // jump to the REAL first item, no animation
-    scrollToItem(carrouselItems[1], 'instant');
-    setTimeout(() => { isJumping = false; }, 50);
-  } else if (isLastClone) {
-    isJumping = true;
-    // jump to the REAL last item, no animation
-    scrollToItem(carrouselItems[carrouselItems.length - 2], 'instant');
-    setTimeout(() => { isJumping = false; }, 50);
-  }
+  updateActiveItem();
 });
-
 window.addEventListener('resize', updateActiveItem);
+updateActiveItem();
+// END CAROUSEL AND SCALING AND SPACING
+
+// GRID AND CARROUSEL SWITCH
+// GRABBING BUTTONS
+const carrouselButton = document.querySelector(".carrousel-button");
+const gridButton = document.querySelector(".grid-button")
+

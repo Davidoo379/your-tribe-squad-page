@@ -26,7 +26,7 @@
 .profile-cards ul::scroll-button(left){
     background-color: unset;
     border: unset;
-    transition: all 0.2s ease;
+    outline: unset;
     font-size: 10rem;
     color: var(--COLOR_WHITE);
     font-family: var(--FONT_FAMILY_ARROW_ICONS);
@@ -34,6 +34,8 @@
     text-justify: center;
     padding-bottom: 1rem;
     filter: drop-shadow(0px 0px 10px rgb(0, 0, 0));
+
+    transition: all 0.2s ease;
 
     :hover{
         scale: 2;
@@ -45,14 +47,12 @@
 .profile-cards ul::scroll-button(left):focus{
     scale: 1.2;
     filter: drop-shadow(0px 0px 20px rgb(0, 0, 0));
-    border: unset;
-    outline: unset;
 }
+
 .profile-cards ul::scroll-button(right):active,
 .profile-cards ul::scroll-button(left):active{
     scale: 0.9;
 }
-
 
 .profile-cards ul {
     grid-column: 1/8;
@@ -74,6 +74,8 @@
     scrollbar-width: none;
     scroll-snap-type: x mandatory;
     scroll-padding: 0 20px;
+    padding-left: calc(50% - (350px / 2));
+    padding-right: calc(50% - (350px / 2));
 
     li {
         scroll-snap-align: center;
@@ -95,9 +97,10 @@
     }
     
     li:nth-child(1){
-        margin-left: 350px;
+        margin-left: 0px;
     }
 }
+
 .active{
     scale: 1.1;
 }
@@ -121,9 +124,18 @@
 .grid-button {
     width: 80px;
     height: 80px;
+    background: unset;
+    border: unset;
+
+    transition: all 0.2s ease;
 }
-
-
-.carrousel-button {}
-
-.grid-button {}
+.carrousel-button:hover,
+.grid-button:hover,
+.carrousel-button:focus,
+.grid-button:focus {
+    scale: 1.2;
+}
+.carrousel-button:active,
+.grid-button:active {
+    scale: 0.9;
+}
