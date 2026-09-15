@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 
 .top-section {
     display: grid;
@@ -23,10 +24,14 @@ h2 {
 }
 
 .review-card {
+=======
+.reviews-rij {
+>>>>>>> Stashed changes
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: flex-start;
+<<<<<<< Updated upstream
     font-size: 25px;
     gap: 5px;
 }
@@ -48,3 +53,9 @@ ul{
         color: var(--COLOR_BLACK)
     }
 }
+=======
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+}
+>>>>>>> Stashed changes
