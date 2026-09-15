@@ -2,12 +2,15 @@
 
 #locations {
     padding: var(--SPACING_LARGE);
+    background-color: var(--COLOR_ACCENT);
 }
 
 /* LOCATION TITLE */
 
 #locations h2 {
     margin-bottom: var(--SPACING_MEDIUM);
+    font-family: var(--FONT_TITLE);
+    font-size: 2rem;
 }
 
 /* LOCATION SCROLL AREA */
