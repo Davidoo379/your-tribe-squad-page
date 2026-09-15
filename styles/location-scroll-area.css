@@ -18,15 +18,13 @@
     overflow-x: auto;
     padding: var(--SPACING_SMALL);
     scroll-behavior: smooth;
-    scroll-snap-type: x mandatory;
     scrollbar-width: none;
 }
 
 /* LOCATION CARDS */
 
 #locations li {
-    flex: 0 0 250px;
-    scroll-snap-align: start;
+    flex: 0 0 calc((100% - (2 * var(--SPACING_MEDIUM))) / 3);
 }
 
 /* LOCATION IMAGES */
