@@ -1,13 +1,13 @@
 /* LOCATIONS */
 
-#locations {
+.locations {
     padding: var(--SPACING_LARGE);
     background-color: var(--COLOR_ACCENT);
 }
 
 /* LOCATION TITLE */
 
-#locations h2 {
+.locations h2 {
     margin-bottom: var(--SPACING_MEDIUM);
     font-family: var(--FONT_TITLE);
     font-size: 2rem;
@@ -15,7 +15,7 @@
 
 /* LOCATION SCROLL AREA */
 
-#locations ul {
+.locations ul {
     display: flex;
     gap: var(--SPACING_LARGE);
     width: 100%;
@@ -27,13 +27,13 @@
 
 /* LOCATION CARDS */
 
-#locations li {
+.locations li {
     flex: 0 0 calc((100% - (2 * var(--SPACING_LARGE))) / 3);
 }
 
 /* LOCATION IMAGES */
 
-#locations li img {
+.locations li img {
     display: block;
     width: 100%;
     height: 220px;
@@ -43,7 +43,7 @@
 
 /* LOCATION TITLES */
 
-#locations li h3 {
+.locations li h3 {
     margin-top: var(--SPACING_SMALL);
     text-align: center;
     font-size: var(--FONT_SIZE_H3);
@@ -51,24 +51,24 @@
 
 /* LOCATION LINKS */
 
-#locations li a {
+.locations li a {
     display: block;
 }
 
 /* HIDE SCROLLBAR */
 
-#locations ul::-webkit-scrollbar {
+.locations ul::-webkit-scrollbar {
     display: none;
 }
 
 /* MOBILE */
 
 @media (max-width: 40rem) {
-    #locations {
+    .locations {
         padding: var(--SPACING_MEDIUM);
     }
 
-    #locations li {
+    .locations li {
         flex-basis: 200px;
     }
 }
