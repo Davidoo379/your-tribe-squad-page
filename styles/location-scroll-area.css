@@ -14,7 +14,8 @@
 
 #locations ul {
     display: flex;
-    gap: var(--SPACING_MEDIUM);
+    gap: var(--SPACING_LARGE);
+    width: 100%;
     overflow-x: auto;
     padding: var(--SPACING_SMALL);
     scroll-behavior: smooth;
@@ -24,14 +25,15 @@
 /* LOCATION CARDS */
 
 #locations li {
-    flex: 0 0 calc((100% - (2 * var(--SPACING_MEDIUM))) / 3);
+    flex: 0 0 calc((100% - (2 * var(--SPACING_LARGE))) / 3);
 }
 
 /* LOCATION IMAGES */
 
 #locations li img {
+    display: block;
     width: 100%;
-    aspect-ratio: 4 / 3;
+    height: 220px;
     object-fit: cover;
     border-radius: var(--BORDER_RADIUS);
 }
