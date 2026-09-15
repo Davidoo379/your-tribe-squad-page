@@ -1,0 +1,74 @@
+/* LOCATIONS */
+
+.locations {
+    padding: var(--SPACING_LARGE);
+    background-color: var(--COLOR_ACCENT);
+}
+
+/* LOCATION TITLE */
+
+.locations h2 {
+    margin-bottom: var(--SPACING_MEDIUM);
+    font-family: var(--FONT_TITLE);
+    font-size: 2rem;
+}
+
+/* LOCATION SCROLL AREA */
+
+.locations ul {
+    display: flex;
+    gap: var(--SPACING_LARGE);
+    width: 100%;
+    overflow-x: auto;
+    padding: var(--SPACING_SMALL);
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+
+/* LOCATION CARDS */
+
+.locations li {
+    flex: 0 0 calc((100% - (2 * var(--SPACING_LARGE))) / 3);
+}
+
+/* LOCATION IMAGES */
+
+.locations li img {
+    display: block;
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: var(--BORDER_RADIUS);
+}
+
+/* LOCATION TITLES */
+
+.locations li h3 {
+    margin-top: var(--SPACING_SMALL);
+    text-align: center;
+    font-size: var(--FONT_SIZE_H3);
+}
+
+/* LOCATION LINKS */
+
+.locations li a {
+    display: block;
+}
+
+/* HIDE SCROLLBAR */
+
+.locations ul::-webkit-scrollbar {
+    display: none;
+}
+
+/* MOBILE */
+
+@media (max-width: 40rem) {
+    .locations {
+        padding: var(--SPACING_MEDIUM);
+    }
+
+    .locations li {
+        flex-basis: 200px;
+    }
+}
