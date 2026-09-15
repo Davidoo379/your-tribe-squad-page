@@ -2,7 +2,7 @@
 
 .locations {
     padding: var(--SPACING_LARGE);
-    background-color: var(--COLOR_ACCENT);
+    background-color: var(--COLOR_WHITE);
 }
 
 /* LOCATION TITLE */
@@ -21,8 +21,8 @@
     width: 100%;
     overflow-x: auto;
     padding: var(--SPACING_SMALL);
+    padding-bottom: var(--SPACING_MEDIUM);
     scroll-behavior: smooth;
-    scrollbar-width: none;
 }
 
 /* LOCATION CARDS */
@@ -39,6 +39,14 @@
     height: 220px;
     object-fit: cover;
     border-radius: var(--BORDER_RADIUS);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* LOCATION IMAGE HOVER */
+
+.locations li img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 12px rgb(0 0 0 / 25%);
 }
 
 /* LOCATION TITLES */
@@ -53,12 +61,6 @@
 
 .locations li a {
     display: block;
-}
-
-/* HIDE SCROLLBAR */
-
-.locations ul::-webkit-scrollbar {
-    display: none;
 }
 
 /* MOBILE */
