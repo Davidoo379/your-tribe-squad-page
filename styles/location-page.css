@@ -10,20 +10,31 @@
     grid-column: 2/3;
     grid-row: 1/2;
 }
+
 .top-section locatie-afbeelding {
     grid-column: 1/2;
     grid-row: 1/3;
 }
+
 .top-section p {
     grid-column: 2/3;
     grid-row: 2/3;
 }
 
 h2 {
- padding-left: var(--SPACING_MEDIUM);
+    padding-left: var(--SPACING_MEDIUM);
 }
 
 .review-card {
+<<<<<<< HEAD
+    .reviews-rij {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+        font-size: 25px;
+        gap: 5px;
+=======
 =======
 .reviews-rij {
 >>>>>>> Stashed changes
@@ -51,7 +62,31 @@ ul{
         transform: translate(0,0);
         filter: drop-shadow(0px 0px 0px rgba(0, 0, 0, 0));
         color: var(--COLOR_BLACK)
+>>>>>>> 39d5b3ede531b05e17da21a6e6736f80e497599d
     }
+
+    ul {
+        list-style-type: none;
+        ;
+    }
+
+    .location-title-exception {
+        align-self: center;
+        padding-left: var(--SPACING_MEDIUM);
+
+
+        /* MOVE TITLE TO CENTER OF HERO */
+        @media (min-width: 30em) {
+            justify-self: unset;
+            transform: translate(0, 0);
+            filter: drop-shadow(0px 0px 0px rgba(0, 0, 0, 0));
+            color: var(--COLOR_BLACK)
+        }
+    }
+
+    gap: 20px;
+    list-style: none;
+    padding: 0;
 }
 =======
     gap: 20px;

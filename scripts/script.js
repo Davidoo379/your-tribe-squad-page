@@ -3,57 +3,113 @@
 const hero = document.querySelector(".hero");
 const items = hero.querySelectorAll("li");
 
-// PARAMETERS FOR AVOIDING THE CENTER SO THAT THE TILE HAS SPACE
-const avoidWidth = 10;
-const avoidHeight = 10;
-
-// PADDING TO THE TOP SO THE CARDS DON'T MOVE TO FAR
-const paddingTop = 10;
-const paddingBottom = 10;
-const paddingLeft = -20;
-const paddingRight = -20;
-
-// DIVINING THE AREA TO AVOID IN PERCENTAGE OF THE HERO ELEMENT
-const avoidArea = {
-    left: (100 - avoidWidth) / 2,
-    right: (100 + avoidWidth) / 2,
-    top: (100 - avoidHeight) / 2,
-    bottom: (100 + avoidHeight) / 2
-};
-
 // GOING THROUGH EACH ITEM AND RANDOMLY POSITIONING IT WITHIN THE HERO ELEMENT, WHILE AVOIDING THE CENTER AREA
 items.forEach(item => {
-    let x, y;
-    // CALCULATING THE WIDTH AND HEIGHT OF THE ITEM IN PERCENTAGE OF THE HERO ELEMENT
-    const itemWidth = item.offsetWidth / hero.clientWidth * 100;
-    const itemHeight = item.offsetHeight / hero.clientHeight * 100;
+  let x, y;
+  // CALCULATING THE WIDTH AND HEIGHT OF THE ITEM IN PERCENTAGE OF THE HERO ELEMENT
+  const itemWidth = item.offsetWidth / hero.clientWidth * 100;
+  const itemHeight = item.offsetHeight / hero.clientHeight * 100;
 
-    // GENERATING RANDOM X AND Y COORDINATES UNTIL THEY ARE OUTSIDE THE AVOID AREA
-    do {
-        // KEEP GENERATING RANDOM X AND Y COORDINATES UNTIL THEY ARE OUTSIDE THE AVOID AREA
-        x = paddingLeft + Math.random() * (
-            100 - paddingLeft - paddingRight - itemWidth
-        );
+  // HOW FAR ITEMS ARE ALLOWED TO SPILL PAST THE HERO EDGES (IN %)
+  const overflowAmount = 15;
 
-        y = paddingTop + Math.random() * (
-            100 - paddingTop - paddingBottom - itemHeight
-        );
+  // RANGE NOW GOES FROM NEGATIVE (past left/top edge) TO PAST THE RIGHT/BOTTOM EDGE
+  x = -overflowAmount + Math.random() * (100 + overflowAmount * 2 - itemWidth);
+  y = -overflowAmount + Math.random() * (100 + overflowAmount * 2 - itemHeight);
 
-    } while (
-        // CHECKING IF THE ITEM IS WITHIN THE AVOID AREA IF SO KEEP GENERATING NEW COORDINATES
-        x < avoidArea.right &&
-        x + itemWidth > avoidArea.left &&
-        y < avoidArea.bottom &&
-        y + itemHeight > avoidArea.top
-    );
+  // GENERATING RANDOM ROTATION AND SCALE TO EACH ITEM
+  const rotation = Math.random() * 360;
+  const scale = Math.random() * (1.2 - 0.9) + 0.9;
 
-    // GENERATING RANDOM ROTATION AND SCALE TO EACH ITEM
-    const rotation = Math.random() * 360;
-    const scale = Math.random() * (1.2 - 0.9) + 0.9;
+  // GENERATION RADNOM DURATION AND DELAY
+  const delay = Math.random() * (3 - 0.3) + 0.3;
+  const duration = Math.random() * (3 - 0.5) + 0.5;
 
-    // APPLYING THE RANDOM ROTATION, SCALE, AND POSITION TO EACH ITEM
-    item.style.transform = `rotate(${rotation}deg) scale(${scale})`;
-    item.style.left = `${x}%`;
-    item.style.top = `${y}%`;
+  // APPLYING
+  item.style.transition = `left ${duration}s ease ${delay}s, top ${duration}s ease ${delay}s`;
+  item.style.transform = `rotate(${rotation}deg) scale(${scale})`;
+  item.style.left = `${x}%`;
+  item.style.top = `${y}%`;
+});
+
+items.forEach(item => {
+
 });
 // END HERO IMAGES
+
+
+
+// START CARROUSEL SCALING AND SPACING
+// GRABBING CARROUSEL UL AND CARROUSEL LI 
+const carrousel = document.querySelector('.profile-cards ul');
+const carrouselItems = document.querySelectorAll('.profile-cards ul li');
+
+function updateActiveItem() {
+  const carrouselRect = carrousel.getBoundingClientRect();
+  if (window.matchMedia('(max-width: 40rem)').matches) {
+    const carrouselCenter = carrouselRect.top + carrouselRect.height / 2;
+
+    let closest = null;
+    let closestDistance = Infinity;
+
+    carrouselItems.forEach((item, i) => {
+      const rect = item.getBoundingClientRect();
+      const itemCenter = rect.top + rect.height / 2;
+      const distance = Math.abs(itemCenter - carrouselCenter);
+
+
+      if (distance < closestDistance) {
+        closestDistance = distance;
+        closest = item;
+      }
+    });
+    carrouselItems.forEach((item) => item.classList.remove('active'));
+    if (closest) closest.classList.add('active');
+
+  } else {
+    const carrouselCenter = carrouselRect.left + carrouselRect.width / 2;
+
+    let closest = null;
+    let closestDistance = Infinity;
+
+    carrouselItems.forEach((item, i) => {
+      const rect = item.getBoundingClientRect();
+      const itemCenter = rect.left + rect.width / 2;
+      const distance = Math.abs(itemCenter - carrouselCenter);
+
+
+      if (distance < closestDistance) {
+        closestDistance = distance;
+        closest = item;
+      }
+    });
+    carrouselItems.forEach((item) => item.classList.remove('active'));
+    if (closest) closest.classList.add('active');
+  }
+}
+
+carrousel.addEventListener('scroll', () => {
+  updateActiveItem();
+});
+window.addEventListener('resize', updateActiveItem);
+updateActiveItem();
+// END CAROUSEL AND SCALING AND SPACING
+
+// GRID AND CARROUSEL SWITCH
+// GRABBING BUTTONS
+const carrouselButton = document.querySelector(".carrousel-button");
+const gridButton = document.querySelector(".grid-button")
+
+carrouselButton.addEventListener("click", enableCarrousel);
+gridButton.addEventListener("click", enableGrid);
+
+function enableGrid() {
+  console.log("Turn on Grid")
+  if (!carrousel.classList.contains('carrousel.classList')) {
+    carrousel.classList.add('profile-cards-grid')
+  }
+}
+function enableCarrousel() {
+  console.log("Turn on Carrousel")
+  carrousel.classList.remove('profile-cards-grid')
+}

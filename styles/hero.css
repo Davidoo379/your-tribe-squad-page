@@ -2,17 +2,17 @@
 .hero{
     position: relative;
     width: 100vw;
-    height: 500px;
+    height: var(--HERO_HEIGHT);
     overflow: hidden;
-    background-color: #86868660;
+    background-image: linear-gradient(0.25turn, var(--COLOR_BACKGROUND_GRADIENT), var(--COLOR_BACKGROUND));
 }
 /* CARD PREVIEWS ARE FREE TO MOVE AND START IN THE MIDDLE */
 .hero li{
     position: absolute;
     list-style: none;
     display: block;
-    left: 50vw;
-    top: 50%;
+    left: -300px;
+    top: uset;
 }
 /* IMG RESIZED AND MAINTAINS ASPECT RATIO */
 .hero li img {
