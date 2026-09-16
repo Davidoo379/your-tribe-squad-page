@@ -1,0 +1,179 @@
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #0072bb; /* De diepblauwe Figma achtergrond */
+    color: #ffffff;
+}
+
+.top-section {
+    display: flex;
+    flex-direction: column; /* Dit zet de afbeelding BOVEN de tekst op mobiel */
+    gap: 30px;
+    padding: 40px 20px;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* De grote afbeelding aan de linkerkant */
+.locatie-afbeelding {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px; /* Figma gebruikt strakke hoeken met minimale afronding */
+    background-color: #ffffff; /* Witvlak mocht de afbeelding transparant zijn */
+}
+
+/* Tekstblok aan de rechterkant */
+.tekst-blok {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* De naam van de locatie (Groot, dik en paars/roze contrast) */
+.tekst-blok h2 {
+    font-size: 54px;
+    font-weight: 800;
+    color: #ff79db; /* Het paars/roze contrast uit je Figma screenshot */
+    margin: 0;
+    letter-spacing: -1px;
+}
+
+/* De beschrijving onder de titel */
+.tekst-blok p {
+    font-size: 18px;
+    line-height: 1.6;
+    font-weight: 400;
+    color: #ff79db; /* Lichtblauw/wit voor perfect leesbaar contrast */
+    margin: 0;
+}
+
+/* De lichtblauwe balk onderaan over de hele breedte */
+.review-section {
+    background-color: #8be3f3; /* De kenmerkende lichtblauwe Figma kleur */
+    padding: 55px 40px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.review-section-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* De grote "Reviews" titel boven de kaartjes */
+.review-section h2 {
+    font-size: 42px;
+    font-weight: 700;
+    color: #0b69b2; /* Wit zoals in de schets */
+    margin: 0 0 35px 0;
+}
+
+/* De lijst die de kaartjes netjes naast elkaar zet */
+.reviews-ul {
+    display: flex;
+    flex-direction: column; /* Dit zet review 1, 2 en 3 recht onder elkaar */
+    justify-content: content;
+    align-items: stretch; 
+    gap: 30px;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* De individuele reviewkaarten */
+.reviews-ul li {
+    flex: 1;
+    background-color: #ffffff; /* Dit maakt de box fel wit */
+    display: flex;
+    flex-direction: column;
+    gap: 12px; /* Iets meer ruimte tussen de teksten binnen de box */
+    padding: 25px; /* Geeft ademruimte aan de binnenkant van de box */
+    border-radius: 8px; /* Zorgt voor mooie, subtiel afgeronde hoeken */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Voegt een zachte, moderne schaduw toe */
+}
+
+/* "review 1", "review 2", etc. */
+.reviews-ul h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #0b69b2; /* Wit zoals op de schets */
+    margin: 0;
+    text-transform: lowercase; /* Alles in kleine letters zoals Figma */
+}
+
+/* De inhoud: "deze ding ik vind helemaal mooi!" */
+.reviews-ul p {
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 600;
+    color: #0b69b2; /* Wit zoals op de schets */
+    margin: 0;
+}
+
+/* De naam van de reviewer (Mika, David, Rosa) */
+.reviews-ul cite {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    color: #0b69b2; /* Wit zoals op de schets */
+    margin-top: auto; /* Duwt de naam altijd netjes naar de onderkant van de kaart */
+    opacity: 0.9;
+}
+
+
+    @media (min-width: 30em) {
+    .top-section {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* PC: Netjes de helft van de pagina */
+        gap: 50px;
+        padding: 60px 40px;
+        align-items: center;
+    }
+
+    .locatie-afbeelding {
+        max-width: 100% !important;
+    }
+
+    .reviews-ul {
+        flex-direction: row; /* PC: Zet de reviews weer strak naast elkaar */
+        justify-content: space-between;
+        gap: 30px;
+    }
+
+    .location-title-exception {
+        align-self: center;
+        padding-left: var(--SPACING_MEDIUM);
+
+
+        /* MOVE TITLE TO CENTER OF HERO */
+        @media (min-width: 30em) {
+            justify-self: unset;
+            transform: translate(0, 0);
+            filter: drop-shadow(0px 0px 0px rgba(0, 0, 0, 0));
+            color: var(--COLOR_BLACK)
+        }
+
+        ul {
+            list-style-type: none;
+            ;
+        }
+
+        .location-title-exception {
+            align-self: center;
+            padding-left: var(--SPACING_MEDIUM);
+
+
+            /* MOVE TITLE TO CENTER OF HERO */
+            @media (min-width: 30em) {
+                justify-self: unset;
+                transform: translate(0, 0);
+                filter: drop-shadow(0px 0px 0px rgba(0, 0, 0, 0));
+                color: var(--COLOR_BLACK)
+            }
+        }
+
+}
+

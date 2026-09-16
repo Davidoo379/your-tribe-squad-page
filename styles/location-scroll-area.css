@@ -2,7 +2,7 @@
 
 .locations {
     padding: var(--SPACING_LARGE);
-    background-color: var(--COLOR_WHITE);
+    background-color: var(--COLOR_ACCENT);
 }
 
 /* LOCATION TITLE */
@@ -63,6 +63,12 @@
     display: block;
 }
 
+/* HIDE SCROLLBAR */
+
+.locations ul::-webkit-scrollbar {
+    display: none;
+}
+
 /* MOBILE */
 
 @media (max-width: 40rem) {
@@ -72,5 +78,12 @@
 
     .locations li {
         flex-basis: 200px;
+    }
+
+    .review-section {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
     }
 }

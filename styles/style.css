@@ -108,7 +108,7 @@ body {
    De standaard bolletjes en nummers van lijsten
    worden verwijderd.
 */
-ul,
+
 ol {
    list-style: none;
 }
