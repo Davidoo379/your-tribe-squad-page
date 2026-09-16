@@ -1,10 +1,24 @@
 
-# Squad page
+# Tribe Squad page
+fdnd
 
-Ontwerp en maak met een team een Squad Page met HTML, CSS en JS.
+## Beschrijving
+### Opdracht
+### Process
+### Resultaat
+link: https://edu.nl/n44fk
 
-<!--De instructie van deze leertaak staan in de [INSTRUCTIONS](https://github.com/fdnd-task/your-tribe-squad-page/blob/main/docs/INSTRUCTIONS.md)-->
-De instructie voor deze leertaak staan in de [WIKI](https://github.com/fdnd-task/your-tribe-squad-page/wiki)
+## Gebruik
+### Structue
+### Hero
+### Profile Cards
+### Locations
+
+## Kenmerken
+### HTML
+### CSS
+
+## Bronnen
 
 ## Licentie
 
