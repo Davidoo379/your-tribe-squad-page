@@ -83,7 +83,7 @@
 .profile-cards ul {
     grid-column: 1/8;
     grid-row: 2/3;
-    height: var(--PROFILE_CARD_SECTION_HEIGHT);
+    height: 400px;
 
     display: flex;
     flex-direction: row;
@@ -93,6 +93,7 @@
 
     /* SWITH TO VERTICAL CARROUSEL */
     @media (max-width: 40rem) {
+        height: var(--PROFILE_CARD_SECTION_HEIGHT);
         flex-direction: column;
         overflow-y: scroll;
         overflow-x: unset;
