@@ -19,4 +19,5 @@
     width: 200px;
     height: auto;
     aspect-ratio: auto;
+    border-radius: (var(--BORDER_RADIUS));
 }
