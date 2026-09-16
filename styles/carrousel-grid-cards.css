@@ -2,7 +2,15 @@
 .profile-cards {
     display: grid;
     grid-template-columns: 1fr 80px 1fr 1fr 1fr 80px 1fr;
-    grid-template-rows: 5rem auto 80px min-content;
+    grid-template-rows: 5rem auto 30px min-content;
+}
+
+/* MOBILE PROFILE CARDS */
+
+@media (max-width: 40rem) {
+    .profile-cards {
+        grid-template-rows: 5rem auto;
+    }
 }
 
 /* PLACING THE H2 INSIDE THE GRID */
@@ -74,11 +82,14 @@
 /* STYLING FOR THE PROFILE CARDS IN CARRAOUSEL MODE */
 .profile-cards ul {
     grid-column: 1/8;
-    grid-row: 2/4;
+    grid-row: 2/3;
     height: auto;
 
     display: flex;
     flex-direction: row;
+
+    overflow-x: scroll;
+    overflow-y: hidden;
 
     /* SWITH TO VERTICAL CARROUSEL */
     @media (max-width: 40rem) {
@@ -98,7 +109,7 @@
     align-self: center;
     justify-content: flex-start;
 
-    padding-top: var(--SPACING_LARGE);
+    padding-top: var(--SPACING_SMALL);
     padding-bottom: var(--SPACING_SMALL);
 
     overflow-x: scroll;
@@ -108,8 +119,8 @@
     scroll-padding: 0 var(--SPACING_MEDIUM);
     padding-left: calc(50% - (350px / 2));
     padding-right: calc(50% - (350px / 2));
-    
-    @media (max-width: 40rem){
+
+    @media (max-width: 40rem) {
         padding-top: calc(50% - (150px / 2));
         padding-bottom: calc(50% - (150px / 2));
     }
@@ -120,6 +131,7 @@
         scroll-snap-align: center;
         scroll-snap-stop: always;
         transition: all 0.2s ease;
+
         /* MOVE TEXT ON TOP OF THE IMAGE */
         @media (max-width: 40rem) {
             display: grid;
@@ -131,6 +143,7 @@
             text-align: center;
             font-size: var(--FONT_SIZE_H3);
             width: min(500px, 60vw);
+
             /* MOVE H3 INTO GRID */
             @media (max-width: 40rem) {
                 grid-column: 1/2;
@@ -148,6 +161,7 @@
             border-radius: var(--BORDER_RADIUS);
 
         }
+
         /* MOVE THE A THAT CONTAINS THE IMAGE INTO THE GRID */
         a {
             @media (max-width: 40rem) {
@@ -164,16 +178,17 @@
         @media (max-width: 40rem) {
             scale: var(--PROFILE_CARD_ACTIVE_SCALE_MOBILE);
         }
-
-        h3 {
-            @media (max-width: 40rem) {
-                z-index: 1;
-                color: var(--COLOR_WHITE);
-            }
-        }
     }
 
+    h3 {
+        @media (max-width: 40rem) {
+            z-index: 1;
+            color: var(--COLOR_WHITE);
+        }
+    }
 }
+
+
 
 /* END CARRAOUSEL MODE */
 
