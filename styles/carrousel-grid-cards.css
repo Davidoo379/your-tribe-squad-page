@@ -83,7 +83,7 @@
 .profile-cards ul {
     grid-column: 1/8;
     grid-row: 2/3;
-    height: auto;
+    height: var(--PROFILE_CARD_SECTION_HEIGHT);
 
     display: flex;
     flex-direction: row;
