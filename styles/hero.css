@@ -1,19 +1,31 @@
 /* A BACKGROUND WITH A SET HEIGHT ON THE HERO CONTAINER */
-.hero{
+.hero {
     position: relative;
     width: 100vw;
     height: var(--HERO_HEIGHT);
     overflow: hidden;
     background-image: linear-gradient(0.25turn, var(--COLOR_BACKGROUND_GRADIENT), var(--COLOR_BACKGROUND));
 }
+
 /* CARD PREVIEWS ARE FREE TO MOVE AND START IN THE MIDDLE */
-.hero li{
+.hero li {
     position: absolute;
     list-style: none;
     display: block;
     left: -300px;
-    top: uset;
+
+    transition:
+        all 1s,
+        left var(--duration) var(--delay),
+        top var(--duration) var(--delay);
+
+    transform:
+        rotate(var(--rotation)) 
+        scale(var(--scale));
+    left: var(--x);
+    top: var(--y);
 }
+
 /* IMG RESIZED AND MAINTAINS ASPECT RATIO */
 .hero li img {
     width: 200px;
@@ -21,4 +33,34 @@
     aspect-ratio: auto;
     border-radius: var(--BORDER_RADIUS);
     display: block;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.77);
+    transition:
+        box-shadow 0.2s,
+        scale 0.2s;
+    }
+    
+    /* HOVER ON A HERO IMAGE */
+    .hero li img:hover {
+        --shadow-dist: 1rem;
+        box-shadow:
+        calc(var(--shadow-dist) * (cos(var(--rotation)) + sin(var(--rotation)))) calc(var(--shadow-dist) * (cos(var(--rotation)) - sin(var(--rotation)))) 10px rgba(0, 0, 0, 0.443);
+        scale: 1.1;
+        transition:
+        box-shadow 0.2s cubic-bezier(.08,1.32,.61,1.47),
+        scale 0.2s cubic-bezier(.08,1.32,.61,1.47);
+    }
+
+/* LOOPING ROTATION */
+.hero li:hover {
+    animation: spin 0.7s ease-in-out infinite alternate;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(var(--rotation)) scale(var(--scale)) rotate(0deg);
+    }
+
+    to {
+        transform: rotate(var(--rotation)) scale(var(--scale)) rotate(2deg);
+    }
 }
