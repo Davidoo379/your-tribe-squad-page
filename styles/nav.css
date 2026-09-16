@@ -25,8 +25,11 @@ header h1 {
     @media (min-width: 30em) {
         justify-self: center;
         transform: translate(40px, calc(calc(var(--HERO_HEIGHT) / 2) + calc(var(--HEADER_HEIGHT)) / 2));
-        filter: drop-shadow(0px 0px 20px rgb(0, 0, 0));
-        color: var(--COLOR_WHITE)
+        background-color: var(--COLOR_BACKGROUND);
+        color: var(--COLOR_BLACK);
+        padding: var(--SPACING_MEDIUM);
+        padding-top: var(--SPACING_SMALL);
+        border-radius: var(--BORDER_RADIUS);
     }
 }
 
