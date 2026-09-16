@@ -5,6 +5,7 @@ header {
     display: grid;
     background-color: var(--COLOR_BACKGROUND);
     grid-template-columns: 1fr 80px;
+    grid-template-rows: var(--HEADER_HEIGHT);
     height: var(--HEADER_HEIGHT);
     width: 100%;
     z-index: 1;
