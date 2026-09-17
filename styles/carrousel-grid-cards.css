@@ -22,63 +22,66 @@
     padding: var(--SPACING_MEDIUM);
 }
 
-/* SETTING THE LOCATION OF THE RIGHT ARROW IN THE GRID */
-.profile-cards ul::scroll-button(right) {
-    content: ">";
-    grid-column: 6/7;
-    grid-row: 3/4;
-}
 
-/* SETTING THE LOCATION OF THE RIGHT ARROW IN THE GRID */
-.profile-cards ul::scroll-button(left) {
-    content: "<";
-    grid-column: 2/3;
-    grid-row: 3/4;
-}
+/* HIDE ARROWS WHEN PROFILE CARDS ARE IN GRID MODE */
 
-/* HIDING THE ARROWS WHEN THE PROFILE CARDS ARE IN GRID MODE */
-.profile-cards ul.profile-cards-grid::scroll-button(right),
-.profile-cards ul.profile-cards-grid::scroll-button(left) {
+.profile-cards:has(ul.profile-cards-grid) .profile-cards-arrow {
     display: none;
 }
 
 /* START STYLING THE ARROW BUTTONS */
-.profile-cards ul::scroll-button(right),
-.profile-cards ul::scroll-button(left) {
 
-    /* HIDE WHEN SCREEN GOES TO MOBILE */
-    @media (max-width: 40rem) {
-        display: none;
-    }
-
+.profile-cards-arrow {
     background-color: unset;
     border: unset;
     outline: unset;
+
     font-size: var(--ARROW_BUTTON_SCALE);
     color: var(--COLOR_WHITE);
     font-family: var(--FONT_FAMILY_ARROW_ICONS);
     text-align: center;
-    text-justify: center;
-    padding-bottom: var(--SPACING_MEDIUM);
+
+    cursor: pointer;
+
     filter: drop-shadow(0px 0px 10px var(--COLOR_BLACK));
 
     transition: all 0.2s ease;
+
+    z-index: 2;
 }
 
-.profile-cards ul::scroll-button(right):hover,
-.profile-cards ul::scroll-button(left):hover,
-.profile-cards ul::scroll-button(right):focus,
-.profile-cards ul::scroll-button(left):focus {
+.profile-cards-arrow-left {
+    grid-column: 2/3;
+    grid-row: 2/5;
+    align-self: center;
+}
+
+.profile-cards-arrow-right {
+    grid-column: 6/7;
+    grid-row: 2/5;
+    align-self: center;
+}
+
+.profile-cards-arrow:hover,
+.profile-cards-arrow:focus {
     scale: 1.2;
     filter: drop-shadow(0px 0px 20px var(--COLOR_BLACK));
 }
 
-.profile-cards ul::scroll-button(right):active,
-.profile-cards ul::scroll-button(left):active {
+.profile-cards-arrow:active {
     scale: 0.9;
 }
 
+/* HIDE ARROWS WHEN SCREEN GOES TO MOBILE */
+
+@media (max-width: 40rem) {
+    .profile-cards-arrow {
+        display: none;
+    }
+}
+
 /* END STYLING THE ARROW BUTTONS */
+
 /* STYLING FOR THE PROFILE CARDS IN CARRAOUSEL MODE */
 .profile-cards ul {
     grid-column: 1/8;
