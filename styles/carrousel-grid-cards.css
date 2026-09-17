@@ -217,11 +217,13 @@
 
     @media (max-width: 40rem) {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        flex-direction: row;
-        flex-wrap: wrap;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: var(--SPACING_SMALL);
+
+        flex-direction: unset;
+        flex-wrap: unset;
         overflow-y: scroll;
-        overflow-x: unset;
+        overflow-x: hidden;
         scroll-snap-type: y mandatory;
     }
 
@@ -232,6 +234,11 @@
         width: 250px;
         border-radius: var(--BORDER_RADIUS);
         padding: 1rem;
+
+        @media (max-width: 40rem) {
+        width: 100%;
+        min-width: 0;
+    }
 
 
         h3 {
