@@ -129,3 +129,36 @@ function enableCarrousel() {
   console.log("Turn on Carrousel")
   carrousel.classList.remove('profile-cards-grid')
 }
+
+// START CARROUSEL ARROWS
+// GRABBING THE ARROW BUTTONS
+const leftArrow = document.querySelector(".profile-cards-arrow-left");
+const rightArrow = document.querySelector(".profile-cards-arrow-right");
+
+// SCROLLING THE CARROUSEL WHEN CLICKING THE ARROWS
+leftArrow.addEventListener("click", () => {
+    const activeCard = carrousel.querySelector(".active");
+    const previousCard = activeCard?.previousElementSibling;
+
+    if (previousCard) {
+        previousCard.scrollIntoView({
+            behavior: "smooth",
+            block: "nearest",
+            inline: "center"
+        });
+    }
+});
+
+rightArrow.addEventListener("click", () => {
+    const activeCard = carrousel.querySelector(".active");
+    const nextCard = activeCard?.nextElementSibling;
+
+    if (nextCard) {
+        nextCard.scrollIntoView({
+            behavior: "smooth",
+            block: "nearest",
+            inline: "center"
+        });
+    }
+});
+// END CARROUSEL ARROWS
