@@ -223,7 +223,7 @@
         flex-direction: unset;
         flex-wrap: unset;
         overflow-y: scroll;
-        overflow-x: hidden;
+        overflow-x: clip;
         scroll-snap-type: y mandatory;
     }
 
