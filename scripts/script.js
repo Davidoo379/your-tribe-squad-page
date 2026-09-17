@@ -3,6 +3,9 @@
 const hero = document.querySelector(".hero");
 const items = hero.querySelectorAll("li");
 
+// STORE THE TARGET X FOR EACH ITEM SO WE CAN APPLY IT AFTER THE REFLOW
+const targets = [];
+
 // GOING THROUGH EACH ITEM AND RANDOMLY POSITIONING IT WITHIN THE HERO ELEMENT, WHILE AVOIDING THE CENTER AREA
 items.forEach(item => {
   let x, y;
@@ -25,17 +28,28 @@ items.forEach(item => {
   const delay = Math.random() * (3 - 0.3) + 0.3;
   const duration = Math.random() * (3 - 0.5) + 0.5;
 
-  // APPLYING
-  item.style.setProperty('--duration', duration);
-  item.style.setProperty('--delay', delay);
+  // APPLYING EVERYTHING EXCEPT X RIGHT AWAY
+  item.style.setProperty('--duration', `${duration}s`);
+  item.style.setProperty('--delay', `${delay}s`);
   item.style.setProperty('--rotation', `${rotation}deg`);
   item.style.setProperty('--scale', scale);
-  item.style.setProperty('--x', `${x}%`);
   item.style.setProperty('--y', `${y}%`);
+
+  // X STARTS OFF-SCREEN SO IT CAN TRANSITION IN
+  item.style.setProperty('--x', '-300%');
+
+  // REMEMBER THE REAL TARGET FOR THIS ITEM
+  targets.push({ item, x });
 });
 
-items.forEach(item => {
+// FORCE ONE REFLOW FOR THE WHOLE BATCH, SO THE BROWSER "SEES" THE -300% STARTING POSITION
+hero.offsetHeight;
 
+// NEXT FRAME: MOVE EVERYTHING TO ITS REAL X, WHICH NOW TRANSITIONS SMOOTHLY
+requestAnimationFrame(() => {
+  targets.forEach(({ item, x }) => {
+    item.style.setProperty('--x', `${x}%`);
+  });
 });
 // END HERO IMAGES
 
