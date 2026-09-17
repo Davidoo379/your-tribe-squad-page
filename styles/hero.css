@@ -19,8 +19,7 @@
         top var(--duration) var(--delay);
 
     transform:
-        rotate(var(--rotation)) 
-        scale(var(--scale));
+        rotate(var(--rotation)) scale(var(--scale));
     left: var(--x);
     top: var(--y);
 }
@@ -37,18 +36,18 @@
     transition:
         box-shadow 0.2s,
         scale 0.2s;
-    }
-    
-    /* HOVER ON A HERO IMAGE */
-    .hero li img:hover {
-        --shadow-dist: 1rem;
-        box-shadow:
+}
+
+/* HOVER ON A HERO IMAGE */
+.hero li img:hover {
+    --shadow-dist: 1rem;
+    box-shadow:
         calc(var(--shadow-dist) * (cos(var(--rotation)) + sin(var(--rotation)))) calc(var(--shadow-dist) * (cos(var(--rotation)) - sin(var(--rotation)))) 10px rgba(0, 0, 0, 0.443);
-        scale: 1.1;
-        transition:
-        box-shadow 0.2s cubic-bezier(.08,1.32,.61,1.47),
-        scale 0.2s cubic-bezier(.08,1.32,.61,1.47);
-    }
+    scale: 1.1;
+    transition:
+        box-shadow 0.2s cubic-bezier(.08, 1.32, .61, 1.47),
+        scale 0.2s cubic-bezier(.08, 1.32, .61, 1.47);
+}
 
 /* LOOPING ROTATION */
 .hero li:hover {
