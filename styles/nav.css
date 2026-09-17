@@ -21,16 +21,18 @@ header h1 {
     padding-left: var(--SPACING_MEDIUM);
     font-family: var(--FONT_TITLE);
     font-size: min(var(--FONT_SIZE_H1), 8vw);
+    color: var(--COLOR_TITLE);
+    font-weight: 900;
+    pointer-events: none;
 
     /* MOVE TITLE TO CENTER OF HERO */
     @media (min-width: 30em) {
         justify-self: center;
         transform: translate(40px, calc(calc(var(--HERO_HEIGHT) / 2) + calc(var(--HEADER_HEIGHT)) / 2));
-        background-color: var(--COLOR_SECONDARY);
-        color: var(--COLOR_BLACK);
+        /* background-color: var(--COLOR_WHITE); */
+        /* border-radius: var(--BORDER_RADIUS); */
         padding: var(--SPACING_MEDIUM);
-        padding-top: var(--SPACING_SMALL);
-        border-radius: var(--BORDER_RADIUS);
+        filter: drop-shadow(0px 0px 20px var(--COLOR_MAIN));
     }
 }
 
@@ -65,6 +67,7 @@ button[popovertarget]:active {
 
 /* POPOVER STYLING AND TRANSITION */
 [popover] {
+    font-weight: 700;
     z-index: -1;
     transition:
         opacity 0.2s ease,
@@ -76,7 +79,7 @@ button[popovertarget]:active {
 /* POPOVER OPEN STATE */
 [popover]:popover-open {
     border: 0;
-    background-color: var(--COLOR_MAIN);
+    background-color: var(--COLOR_SECONDARY);
     border-radius: 0 0 var(--BORDER_RADIUS) var(--BORDER_RADIUS);
     inset: var(--HEADER_HEIGHT) var(--SPACING_MEDIUM) auto auto;
     transform: translateX(0);
