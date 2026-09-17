@@ -3,7 +3,7 @@
     position: relative;
     width: 100vw;
     height: var(--HERO_HEIGHT);
-    overflow-x: clip;
+    overflow: clip;
 }
 
 /* CARD PREVIEWS ARE FREE TO MOVE AND START IN THE MIDDLE */
