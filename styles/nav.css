@@ -5,6 +5,7 @@ header {
     display: grid;
     background-color: var(--COLOR_BACKGROUND);
     grid-template-columns: 1fr 80px;
+    grid-template-rows: var(--HEADER_HEIGHT);
     height: var(--HEADER_HEIGHT);
     width: 100%;
     z-index: 1;
@@ -19,7 +20,7 @@ header h1 {
     align-self: center;
     padding-left: var(--SPACING_MEDIUM);
     font-family: var(--FONT_TITLE);
-    font-size: var(--FONT_SIZE_H1);
+    font-size: min(var(--FONT_SIZE_H1), 8vw);
 
     /* MOVE TITLE TO CENTER OF HERO */
     @media (min-width: 30em) {

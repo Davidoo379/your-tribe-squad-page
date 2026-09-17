@@ -26,10 +26,12 @@ items.forEach(item => {
   const duration = Math.random() * (3 - 0.5) + 0.5;
 
   // APPLYING
-  item.style.transition = `left ${duration}s ease ${delay}s, top ${duration}s ease ${delay}s`;
-  item.style.transform = `rotate(${rotation}deg) scale(${scale})`;
-  item.style.left = `${x}%`;
-  item.style.top = `${y}%`;
+  item.style.setProperty('--duration', duration);
+  item.style.setProperty('--delay', delay);
+  item.style.setProperty('--rotation', `${rotation}deg`);
+  item.style.setProperty('--scale', scale);
+  item.style.setProperty('--x', `${x}%`);
+  item.style.setProperty('--y', `${y}%`);
 });
 
 items.forEach(item => {
