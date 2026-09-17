@@ -2,7 +2,7 @@
 .profile-cards {
     display: grid;
     grid-template-columns: 1fr 80px 1fr 1fr 1fr 80px 1fr;
-    grid-template-rows: 5rem auto 30px min-content;
+    grid-template-rows: 5rem 1fr 80px 1fr 30px min-content;
 }
 
 /* MOBILE PROFILE CARDS */
@@ -82,7 +82,7 @@
 /* STYLING FOR THE PROFILE CARDS IN CARRAOUSEL MODE */
 .profile-cards ul {
     grid-column: 1/8;
-    grid-row: 2/3;
+    grid-row: 2/5;
     height: 400px;
 
     display: flex;
@@ -283,7 +283,7 @@
 /* STYLING THE PROFILE CARD VIEWING MODE BUTTONS */
 .carrousel-grid-toggle {
     grid-column: 4/5;
-    grid-row: 4/5;
+    grid-row: 7/8;
     padding: var(--SPACING_MEDIUM);
     display: flex;
     flex-direction: row;
