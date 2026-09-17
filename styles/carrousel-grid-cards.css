@@ -2,7 +2,15 @@
 .profile-cards {
     display: grid;
     grid-template-columns: 1fr 80px 1fr 1fr 1fr 80px 1fr;
-    grid-template-rows: 5rem 1fr 80px 1fr min-content;
+    grid-template-rows: 5rem auto 30px min-content;
+}
+
+/* MOBILE PROFILE CARDS */
+
+@media (max-width: 40rem) {
+    .profile-cards {
+        grid-template-rows: 5rem auto;
+    }
 }
 
 /* PLACING THE H2 INSIDE THE GRID */
@@ -74,14 +82,18 @@
 /* STYLING FOR THE PROFILE CARDS IN CARRAOUSEL MODE */
 .profile-cards ul {
     grid-column: 1/8;
-    grid-row: 2/6;
-    height: var(--PROFILE_CARD_SECTION_HEIGHT);
+    grid-row: 2/3;
+    height: 400px;
 
     display: flex;
     flex-direction: row;
 
+    overflow-x: scroll;
+    overflow-y: hidden;
+
     /* SWITH TO VERTICAL CARROUSEL */
     @media (max-width: 40rem) {
+        height: var(--PROFILE_CARD_SECTION_HEIGHT);
         flex-direction: column;
         overflow-y: scroll;
         overflow-x: unset;
@@ -98,8 +110,8 @@
     align-self: center;
     justify-content: flex-start;
 
-    padding-top: var(--SPACING_LARGE);
-    padding-bottom: var(--SPACING_LARGE);
+    padding-top: var(--SPACING_SMALL);
+    padding-bottom: var(--SPACING_SMALL);
 
     overflow-x: scroll;
     scroll-behavior: smooth;
@@ -167,16 +179,17 @@
         @media (max-width: 40rem) {
             scale: var(--PROFILE_CARD_ACTIVE_SCALE_MOBILE);
         }
-
-        h3 {
-            @media (max-width: 40rem) {
-                z-index: 1;
-                color: var(--COLOR_WHITE);
-            }
-        }
     }
 
+    h3 {
+        @media (max-width: 40rem) {
+            z-index: 1;
+            color: var(--COLOR_WHITE);
+        }
+    }
 }
+
+
 
 /* END CARRAOUSEL MODE */
 
@@ -270,7 +283,8 @@
 /* STYLING THE PROFILE CARD VIEWING MODE BUTTONS */
 .carrousel-grid-toggle {
     grid-column: 4/5;
-    grid-row: 5/6;
+    grid-row: 4/5;
+    padding: var(--SPACING_MEDIUM);
     display: flex;
     flex-direction: row;
     align-items: center;
