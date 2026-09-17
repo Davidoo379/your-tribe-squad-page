@@ -8,26 +8,23 @@
 
 :root {
    /* TYPOGRAPHY */
-   --FONT_FAMILY: Arial, sans-serif;
+   --FONT_FAMILY: 'Playfair Display', sans-serif;
    --FONT_FAMILY_ARROW_ICONS: "Comic Relief", sans-serif;
    --FONT_TITLE: 'Playfair Display', serif;
    --FONT_SIZE: 1rem;
-   --FONT_SIZE_H1: 4rem;
+   --FONT_SIZE_H1: 6rem;
    --FONT_SIZE_H2: 2rem;
-   --FONT_SIZE_H3: 1.5rem;
+   --FONT_SIZE_H3: 2rem;
    --LINE_HEIGHT: 1.5;
 
    /* COLORS */
-   --COLOR_BACKGROUND: #ffffff;
-   --COLOR_BACKGROUND_HIGHLIGHT: #97daef;
-   --COLOR_BACKGROUND_BUTTON: #e4e4e4;
-   --COLOR_BACKGROUND_ACTIVE: #696969;
-   --COLOR_BACKGROUND_GRADIENT: #97daef;
-   --COLOR_BACKGROUND_GRID_CARDS: #a6d8e6;
-   --COLOR_ACCENT: #97daef;
-   --COLOR_WHITE: #ffffff;
-   --COLOR_BLACK: #000000;
-   --COLOR_TEXT: #111111;
+   --COLOR_MAIN: #00592B;
+   --COLOR_SECONDARY: #046835;
+   --COLOR_ACCENT: #F47FE0;
+   --COLOR_TITLE: #1AE687;
+   --COLOR_WHITE: #F1F0EC;
+   --COLOR_BLACK: #19110F;
+
 
    /* SPACING */
    --SPACING_SMALL: 0.5rem;
@@ -37,7 +34,6 @@
    /* BORDERS */
    --BORDER_RADIUS: 10px;
    --BORDER_WITDH: 1px;
-   --BORDER_COLOR: #000000;
 
    /* HEADER */
    --HEADER_HEIGHT: 5rem;
@@ -48,7 +44,7 @@
    /* PROFILE CARDS SECTION */
    --PROFILE_CARD_SECTION_HEIGHT: 600px;
    --PROFILE_CARD_ACTIVE_SCALE: 1.1;
-   --PROFILE_CARD_ACTIVE_SCALE_MOBILE: 1.3;
+   --PROFILE_CARD_ACTIVE_SCALE_MOBILE: 1;
    --PROFILE_CARD_GRID_MIN_WIDTH: 250px;
 
    /* ARROW BUTTONS */
@@ -96,8 +92,8 @@
    van de website.
 */
 body {
-   background-color: var(--COLOR_BACKGROUND);
-   color: var(--COLOR_TEXT);
+   background-color: var(--COLOR_MAIN);
+   color: var(--COLOR_BLACK);
    font-family: var(--FONT_FAMILY);
    font-size: var(--FONT_SIZE);
    line-height: var(--LINE_HEIGHT);
@@ -109,7 +105,8 @@ body {
    worden verwijderd.
 */
 
-ol ,ul{
+ol,
+ul {
    list-style: none;
 }
 
@@ -149,5 +146,19 @@ h2,
 h3 {
    font-family: var(--FONT_TITLE);
    font-weight: 700;
+   color: var(--COLOR_WHITE);
+}
+
+h3 {
    color: var(--COLOR_BLACK);
+}
+
+h2 {
+   background-color: var(--COLOR_SECONDARY);
+   padding: var(--SPACING_MEDIUM);
+   font-size: var(--FONT_SIZE_H2);
+   border-radius: 9999px;
+   width: min-content;
+   white-space: nowrap;
+   margin: var(--SPACING_MEDIUM);
 }

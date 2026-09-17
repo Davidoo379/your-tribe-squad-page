@@ -13,8 +13,11 @@ footer a {
     padding: var(--SPACING_SMALL);
     border: 0;
     border-radius: var(--BORDER_RADIUS);
-    background-color: var(--COLOR_BACKGROUND);
+    background-color: var(--COLOR_WHITE);
     color: var(--COLOR_TEXT);
+    text-align: center;
+    font-weight: 700;
+    font-family: var(--FONT_TITLE);
     text-decoration: none;
     transition: background-color 0.2s ease;
 }
@@ -23,7 +26,7 @@ footer a {
 
 footer a:hover,
 footer a:focus-visible {
-    background-color: var(--COLOR_BACKGROUND_HIGHLIGHT);
+    background-color: var(--COLOR_ACCENT);
 }
 
 /* Focus-effect */
