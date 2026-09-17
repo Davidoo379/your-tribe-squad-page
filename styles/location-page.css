@@ -25,12 +25,13 @@
     font-weight: 800;
     background-color: unset;
     color: var(--COLOR_BLACK);
-    padding: var(--SPACING_SMALL) 0;
-    margin: auto;
+    padding: 0;
+    margin: 0 0 var(--SPACING_MEDIUM) 0;
 }
 
 .tekst-blok p {
     font-size: min(1rem, 2vw);
+    margin: 0;
 }
 
 /* Witruimte tussen de beschrijving en de link */
