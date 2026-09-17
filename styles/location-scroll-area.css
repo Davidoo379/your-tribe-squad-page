@@ -2,7 +2,7 @@
 
 .locations {
     padding: var(--SPACING_LARGE);
-    background-color: var(--COLOR_ACCENT);
+    background-color: var(--COLOR_BACKGROUND);
 }
 
 /* LOCATION TITLE */
@@ -61,12 +61,6 @@
 
 .locations li a {
     display: block;
-}
-
-/* HIDE SCROLLBAR */
-
-.locations ul::-webkit-scrollbar {
-    display: none;
 }
 
 /* MOBILE */
