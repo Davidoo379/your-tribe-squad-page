@@ -3,7 +3,7 @@ header {
     position: sticky;
     top: 0;
     display: grid;
-    background-color: var(--COLOR_BACKGROUND);
+    background-color: var(--COLOR_SECONDARY);
     grid-template-columns: 1fr 80px;
     grid-template-rows: var(--HEADER_HEIGHT);
     height: var(--HEADER_HEIGHT);
@@ -26,7 +26,7 @@ header h1 {
     @media (min-width: 30em) {
         justify-self: center;
         transform: translate(40px, calc(calc(var(--HERO_HEIGHT) / 2) + calc(var(--HEADER_HEIGHT)) / 2));
-        background-color: var(--COLOR_BACKGROUND);
+        background-color: var(--COLOR_SECONDARY);
         color: var(--COLOR_BLACK);
         padding: var(--SPACING_MEDIUM);
         padding-top: var(--SPACING_SMALL);
@@ -46,8 +46,8 @@ nav {
 button[popovertarget] {
     padding: var(--SPACING_SMALL);
     border-radius: var(--BORDER_RADIUS);
-    background-color: var(--COLOR_BACKGROUND);
-    color: var(--COLOR_TEXT);
+    background-color: var(--COLOR_WHITE);
+    color: var(--COLOR_BLACK);
     border: 0;
     justify-self: center;
     cursor: pointer;
@@ -56,11 +56,11 @@ button[popovertarget] {
 
 button[popovertarget]:hover,
 button[popovertarget]:focus-visible {
-    background-color: var(--COLOR_BACKGROUND_HIGHLIGHT);
+    background-color: var(--COLOR_ACCENT);
 }
 
 button[popovertarget]:active {
-    background-color: var(--COLOR_BACKGROUND_ACTIVE);
+    background-color: var(--COLOR_MAIN);
 }
 
 /* POPOVER STYLING AND TRANSITION */
@@ -76,7 +76,7 @@ button[popovertarget]:active {
 /* POPOVER OPEN STATE */
 [popover]:popover-open {
     border: 0;
-    background-color: var(--COLOR_BACKGROUND);
+    background-color: var(--COLOR_MAIN);
     border-radius: 0 0 var(--BORDER_RADIUS) var(--BORDER_RADIUS);
     inset: var(--HEADER_HEIGHT) var(--SPACING_MEDIUM) auto auto;
     transform: translateX(0);
@@ -100,17 +100,17 @@ nav ul {
         margin: var(--SPACING_SMALL);
         padding: var(--SPACING_SMALL);
         border-radius: var(--BORDER_RADIUS);
-        background-color: var(--COLOR_BACKGROUND_BUTTON);
-        color: var(--COLOR_TEXT);
+        background-color: var(--COLOR_WHITE);
+        color: var(--COLOR_BLACK);
         transition: background-color 0.2s ease;
     }
 
     a:hover,
     a:focus-visible {
-        background-color: var(--COLOR_BACKGROUND_HIGHLIGHT);
+        background-color: var(--COLOR_ACCENT);
     }
 
     a:active {
-        background-color: var(--COLOR_BACKGROUND_ACTIVE);
+        background-color: var(--COLOR_MAIN);
     }
 }
