@@ -109,7 +109,7 @@ body {
    worden verwijderd.
 */
 
-ol {
+ol ,ul{
    list-style: none;
 }
 
