@@ -24,6 +24,8 @@ header h1 {
     color: var(--COLOR_TITLE);
     font-weight: 900;
     pointer-events: none;
+    background-color: var(--COLOR_SECONDARY);
+    border-radius: 9999px;
 
     /* MOVE TITLE TO CENTER OF HERO */
     @media (min-width: 30em) {

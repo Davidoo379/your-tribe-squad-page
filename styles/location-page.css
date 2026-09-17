@@ -25,13 +25,21 @@
     font-weight: 800;
     background-color: unset;
     color: var(--COLOR_BLACK);
-    padding: var(--SPACING_SMALL) 0;
-    margin: auto;
+    padding: 0;
+    margin: 0 0 var(--SPACING_MEDIUM) 0;
 }
 
 .tekst-blok p {
     font-size: min(1rem, 2vw);
+    margin: 0;
 }
+
+/* Witruimte tussen de beschrijving en de link */
+
+.tekst-blok p + p {
+    margin-top: var(--SPACING_MEDIUM);
+}
+
 /* De lichtblauwe balk onderaan over de hele breedte */
 .review-section {
     /* De kenmerkende lichtblauwe Figma kleur */
@@ -95,14 +103,17 @@
         gap: 2vw;
         padding: var(--SPACING_MEDIUM);
         align-items: center;
+
         img {
             grid-column: 1/2;
             grid-row: 1/3;
         }
+
         .tekst-blok {
             grid-column: 2/3;
             grid-row: 1/2;
         }
+
         h2 {
             font-size: min(2rem, 2vw);
         }
@@ -121,7 +132,7 @@
         padding-left: var(--SPACING_MEDIUM);
         font-size: min(3rem, 3vw);
         color: var(--COLOR_TITLE);
-        
+
         /* MOVE TITLE TO CENTER OF HERO */
         @media (min-width: 30em) {
             justify-self: unset;
@@ -141,4 +152,7 @@
         }
     }
 
+    .tekst-blok a {
+    text-decoration: underline;
+}
 }
