@@ -127,7 +127,7 @@
     scroll-padding: 0 var(--SPACING_MEDIUM);
     padding-left: calc(50% - (350px / 2));
     padding-right: calc(50% - (350px / 2));
-    
+
     @media (max-width: 40rem) {
         padding-left: unset;
         padding-right: unset;
@@ -316,7 +316,14 @@
     background-color: var(--COLOR_SECONDARY);
     border-radius: 9999px;
     margin: var(--SPACING_MEDIUM);
+    
     width: min(200px, 20vw);
+    
+    @media (max-width: 40rem) {
+        width: min(200px, 25vw);
+        padding: var(--SPACING_SMALL);
+    }
+
     height: auto;
     z-index: 2;
 }
@@ -327,10 +334,11 @@
     border: unset;
     transition: all 0.2s ease;
     width: 4rem;
-    height: 4rem;
+    height: auto;
     background-color: var(--COLOR_WHITE);
     border-radius: 9999px;
-    img{
+
+    img {
         height: 100%;
         width: 100%;
         padding: var(--SPACING_SMALL);
