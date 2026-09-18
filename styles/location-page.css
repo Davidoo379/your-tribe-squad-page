@@ -34,9 +34,27 @@
     margin: 0;
 }
 
+@media (max-width: 40rem) {
+    .tekst-blok {
+        width: 100%;
+    }
+
+    .tekst-blok h2 {
+        font-size: 1.5rem;
+        white-space: normal;
+        overflow-wrap: break-word;
+    }
+
+    .tekst-blok p {
+        font-size: 1.1rem;
+        line-height: 1.5;
+        overflow-wrap: break-word;
+    }
+}
+
 /* Witruimte tussen de beschrijving en de link */
 
-.tekst-blok p + p {
+.tekst-blok p+p {
     margin-top: var(--SPACING_MEDIUM);
 }
 
@@ -154,6 +172,7 @@
     }
 
     .tekst-blok a {
-    text-decoration: underline;
-}
+        text-decoration: underline;
+    }
+
 }
