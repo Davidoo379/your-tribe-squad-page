@@ -132,6 +132,7 @@
         padding-left: var(--SPACING_MEDIUM);
         font-size: min(3rem, 3vw);
         color: var(--COLOR_TITLE);
+        background-color: unset;
 
         /* MOVE TITLE TO CENTER OF HERO */
         @media (min-width: 30em) {
