@@ -18,10 +18,15 @@ https://edu.nl/n44fk
 ### Structue
 De pagina heeft een duidelijke heading/title waar onder twee section voor de profile cards en locations.
 In de header zit een navigatie knop waarmee je over de pagina kan navigeren of je kan scrollen.
+<img width="1156" height="819" alt="hero-screenshot" src="https://github.com/user-attachments/assets/64c3fa99-026f-454c-99af-64c05b76807d" />
 ### Hero
 De hero heeft plaatjes die doormiddel van een animatie invliegen op random plekken. De locatie van de plaatjes is dus ook elke keer anders. De plaatjes linken naar de corresponderende pagina's.
+<img width="1153" height="818" alt="profile-cards-carrousel" src="https://github.com/user-attachments/assets/38828e3b-d907-402f-b16c-bd197dfeb6de" />
+<img width="1153" height="889" alt="profile-cards-grid" src="https://github.com/user-attachments/assets/5ded6291-a02a-4a30-989c-a910002c5984" />
 ### Profile Cards
 Deze section heeft alle profile cards met de naam van wie hij is, in twee viewing modes, een scroll carrousel en een grid, waar je tussen kan switchen via de buttons eronder. Deze plaatjes linken ook weer naar de corresponderende pagina's.
+<img width="1158" height="587" alt="location-section" src="https://github.com/user-attachments/assets/2d08fa4b-a7ec-47f8-a20b-d762135b1bb4" />
+<img width="1243" height="855" alt="location-page-screenshot" src="https://github.com/user-attachments/assets/1e04ece7-ddb5-445b-ba6f-fbf591851b62" />
 ### Locations
 Hier is een lijst met plaatjes van locaties en hun naam met een link naar hun locatie pagina.
 
